@@ -32,12 +32,22 @@ const changePasswordFailure = function () {
   $('#message').css('background-color', 'red')
 }
 
+const signOutSuccess = function (data) {
+  $('#message').text('Successfully signed out')
+  $('#message').css('background-color', 'green')
+}
+
+const signOutFailure = function () {
+  $('#message').text('Something went wrong with sign out')
+  $('#message').css('background-color', 'red')
+}
 module.exports = {
   signUpFailure,
   signUpSuccess,
   signInFailure,
   signInSuccess,
   changePasswordFailure,
-  changePasswordSuccess
-
+  changePasswordSuccess,
+  signOutFailure,
+  signOutSuccess
 }
