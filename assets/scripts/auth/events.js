@@ -11,6 +11,7 @@ const onSignUp = function (event) {
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
+  $('#sign-up')[0].reset()
 }
 
 // Sign in event handler
@@ -23,6 +24,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
+  $('#sign-in')[0].reset()
 }
 
 const onChangePassword = function (event) {
@@ -33,6 +35,7 @@ const onChangePassword = function (event) {
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
+  $('#change-password')[0].reset()
 }
 
 const onSignOut = function (event) {
