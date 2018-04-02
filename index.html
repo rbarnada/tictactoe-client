@@ -12,6 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+
       <p id='message'></p>
       <h1>Tic-Tac-Toe</h1>
       <form id="sign-up">
@@ -48,4 +49,34 @@
         </fieldset>
       </form>
     </body>
+
+      <h1>Tic-Tac-Toe</h1>
+      <p id="messages"></p>
+      <div class="game-board">
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="col-xs-12">
+            <div class="col-xs-4 spaces sqr" data-value="0"></div>
+            <div class="col-xs-4 spaces sqr top" data-value="1"></div>
+            <div class="col-xs-4 spaces sqr" data-value="2"></div>
+          </div>
+          <div class="col-xs-12">
+            <div class="col-xs-4 spaces sqr left" data-value="3"></div>
+            <div class="col-xs-4 spaces sqr center" data-value="4"></div>
+            <div class="col-xs-4 spaces sqr right" data-value="5"></div>
+          </div>
+          <div class="col-xs-12">
+            <div class="col-xs-4 spaces sqr" data-value="6"></div>
+            <div class="col-xs-4 spaces sqr bottom" data-value="7"></div>
+            <div class="col-xs-4 spaces sqr" data-value="8"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form id="restart" class='border'>
+        <input type="submit" value="Restart">
+   </form>
+    <p id='user-message'></p>
+  </body>
+
 </html>
