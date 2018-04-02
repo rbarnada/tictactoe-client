@@ -31,10 +31,11 @@ $(() => {
         currentPlayer = playerOne
       }
       $(event.target).off('click')
+
       console.log(turn)
       console.log(gameBoard)
 
-      // check for winner
+      // check for user
       if ((gameBoard[0] === 'X' && gameBoard[1] === 'X' && gameBoard[2] === 'X') ||
         (gameBoard[0] === 'X' && gameBoard[3] === 'X' && gameBoard[6] === 'X') ||
         (gameBoard[0] === 'X' && gameBoard[4] === 'X' && gameBoard[8] === 'X') ||
@@ -44,7 +45,7 @@ $(() => {
         (gameBoard[1] === 'X' && gameBoard[4] === 'X' && gameBoard[7] === 'X') ||
         (gameBoard[2] === 'X' && gameBoard[4] === 'X' && gameBoard[6] === 'X')) {
         console.log('Player 1 wins')
-        $('#winner-message').text('Player 1 wins')
+        $('#user-message').text('Player 1 wins')
         $('.spaces').off('click')
         gameOver = true
         $('#restart').show()
@@ -57,12 +58,12 @@ $(() => {
         (gameBoard[1] === 'O' && gameBoard[4] === 'O' && gameBoard[7] === 'O') ||
         (gameBoard[2] === 'O' && gameBoard[4] === 'O' && gameBoard[6] === 'O')) {
         console.log('Player 2 wins')
-        $('#winner-message').text('Player 2 wins')
+        $('#user-message').text('Player 2 wins')
         $('.spaces').off('click')
         gameOver = true
         $('#restart').show()
       } else if (gameBoard[0] !== '' && gameBoard[1] !== '' && gameBoard[2] !== '' && gameBoard[3] !== '' && gameBoard[4] !== '' && gameBoard[5] !== '' && gameBoard[6] !== '' && gameBoard[7] !== '' && gameBoard[8] !== '') {
-        $('#winner-message').text("It's a tie")
+        $('#user-message').text("It's a tie")
         gameOver = true
         $('#restart').show()
       }
@@ -85,7 +86,7 @@ $(() => {
       gameBoard[6] = ''
       gameBoard[7] = ''
       gameBoard[8] = ''
-      $('#winner-message').text('')
+      $('#user-message').text('')
       $('.spaces').html('')
       newGame()
     }
