@@ -46,6 +46,7 @@ const onSignOut = function (event) {
   api.signOut(data)
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
+  $('#change-password')[0].reset()
 }
 
 const addHandlers = function () {
