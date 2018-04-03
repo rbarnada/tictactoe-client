@@ -8,6 +8,7 @@ const createGameSuccess = function (data) {
   gameLogic.runGame()
   $('#user-message').text('')
   $('.spaces').html('')
+  $('#new-game').addClass('hidden')
 }
 
 const createGameFailure = function () {

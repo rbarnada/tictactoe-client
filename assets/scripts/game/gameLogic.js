@@ -27,6 +27,7 @@ const runGame = function () {
       } else {
         $('#message').text('Invalid move. Try again')
         $('#message').css('background-color', 'red')
+        setTimeout(() => $('#message').text(''), 2000)
         // $(event.target).off('click')
         // console.log('error')
       }
@@ -70,6 +71,7 @@ const runGame = function () {
         $('#user-message').text('Player 1 wins')
         $('.spaces').off('click')
         store.gameState = true
+        $('#new-game').removeClass('hidden')
         // console.log(store.gameState)
       } else if ((gameBoard[0] === 'O' && gameBoard[1] === 'O' && gameBoard[2] === 'O') ||
         (gameBoard[0] === 'O' && gameBoard[3] === 'O' && gameBoard[6] === 'O') ||
@@ -84,10 +86,12 @@ const runGame = function () {
         $('.spaces').off('click')
         // gameOver = true
         store.gameState = true
+        $('#new-game').removeClass('hidden')
       } else if (gameBoard[0] !== '' && gameBoard[1] !== '' && gameBoard[2] !== '' && gameBoard[3] !== '' && gameBoard[4] !== '' && gameBoard[5] !== '' && gameBoard[6] !== '' && gameBoard[7] !== '' && gameBoard[8] !== '') {
         $('#user-message').text("It's a tie")
         // gameOver = true
         store.gameState = true
+        $('#new-game').removeClass('hidden')
       }
       // Update game api function
       api.updateGame(event)
