@@ -1,67 +1,113 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Tic-Tac-Toe</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Tic-Tac-Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <p id='message'></p>
-      <h1>Tic-Tac-Toe</h1>
-      <form id="sign-up">
-        <fieldset>
-          <legend>Sign Up!</legend>
-            <input name="credentials[email]" type="text" placeholder="email">
-            <input name="credentials[password]" type="password" placeholder="password">
-            <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-          <input type="submit" value="Sign Up!">
-        </fieldset>
-      </form>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-      <form id="sign-in">
-        <fieldset>
-          <legend>Sign In!</legend>
-            <input name="credentials[email]" type="text" placeholder="email">
-            <input name="credentials[password]" type="password" placeholder="password">
-          <input type="submit" value="Sign In!">
-        </fieldset>
-      </form>
+<body>
+  <div class="container">
+    <div class="row">
 
-      <form id="change-password" class="hidden">
-        <fieldset>
-          <legend>Change Password!</legend>
-            <input name="passwords[old]" type="password" placeholder="old password">
-            <input name="passwords[new]" type="password" placeholder="new password">
-          <input type="submit" value="Change Password!">
-        </fieldset>
-      </form>
-      <form id="sign-out" class="hidden">
-        <fieldset>
-          <legend>Sign Out!</legend>
-            <input type="submit" value="Sign Out!">
-        </fieldset>
-      </form>
-    </body>
+      <header>
+        <nav class="navbar navbar-default navbar-static" id="navbar-example">
+          <div class="container-fluid">
+            <div class="navbar-header"> <button class="collapsed navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>              <a href="#" class="navbar-brand">Project Name</a> </div>
+            <div class="collapse navbar-collapse bs-example-js-navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="dropdown"> <a href="#" class="dropdown-toggle" id="drop1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Dropdown <span class="caret"></span> </a>
+                  <ul class="dropdown-menu" aria-labelledby="drop1">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown"> <a href="#" class="dropdown-toggle" id="drop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Dropdown <span class="caret"></span> </a>
+                  <ul class="dropdown-menu" aria-labelledby="drop2">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li id="fat-menu" class="dropdown"> <a href="#" class="dropdown-toggle" id="drop3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Dropdown <span class="caret"></span> </a>
+                  <ul class="dropdown-menu" aria-labelledby="drop3">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="col-xs-4">
+          <p id='message'></p>
+          <h1>Tic-Tac-Toe</h1>
+        </div>
+      </header>
+    </div>
+    <form id="sign-up">
+      <fieldset>
+        <legend>Sign Up!</legend>
+        <input name="credentials[email]" type="text" placeholder="email">
+        <input name="credentials[password]" type="password" placeholder="password">
+        <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+        <input type="submit" value="Sign Up!">
+      </fieldset>
+    </form>
 
-      <!-- <h1>Tic-Tac-Toe</h1> -->
-      <form id="new-game" class="hidden">
-          <fieldset>
-            <legend>Start New Game</legend>
-            <input type="submit" value="New Game">
-          </fieldset>
-      </form>
-      <p id="messages"></p>
-      <div class="game-board hidden">
-        <div class="row">
-          <div class="col-xs-6">
-            <div class="col-xs-12">
+    <form id="sign-in">
+      <fieldset>
+        <legend>Sign In!</legend>
+        <input name="credentials[email]" type="text" placeholder="email">
+        <input name="credentials[password]" type="password" placeholder="password">
+        <input type="submit" value="Sign In!">
+      </fieldset>
+    </form>
+
+    <form id="change-password" class="hidden">
+      <fieldset>
+        <legend>Change Password!</legend>
+        <input name="passwords[old]" type="password" placeholder="old password">
+        <input name="passwords[new]" type="password" placeholder="new password">
+        <input type="submit" value="Change Password!">
+      </fieldset>
+    </form>
+    <form id="sign-out" class="hidden">
+      <fieldset>
+        <legend>Sign Out!</legend>
+        <input type="submit" value="Sign Out!">
+      </fieldset>
+    </form>
+
+    <!-- <h1>Tic-Tac-Toe</h1> -->
+    <form id="new-game" class="hidden">
+      <fieldset>
+        <legend>Start New Game</legend>
+        <input type="submit" value="New Game">
+      </fieldset>
+    </form>
+    <p id="messages"></p>
+    <div class="game-board hidden">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="col-xs-12">
             <div class="col-xs-4 spaces sqr" data-value="0"></div>
             <div class="col-xs-4 spaces sqr top" data-value="1"></div>
             <div class="col-xs-4 spaces sqr" data-value="2"></div>
@@ -83,8 +129,9 @@
 
 
     <form id="games-played" class="hidden">
-          <input type="submit" value="Total Games Played">
+      <input type="submit" value="Total Games Played">
     </form>
-  </body>
+  </div>
+</body>
 
 </html>
