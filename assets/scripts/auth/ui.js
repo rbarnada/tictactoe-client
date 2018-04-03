@@ -17,6 +17,8 @@ const signInSuccess = function (data) {
   $('#sign-out').removeClass('hidden')
   $('#sign-up').addClass('hidden')
   $('#sign-in').addClass('hidden')
+  $('#new-game').removeClass('hidden')
+  $('#games-played').removeClass('hidden')
   store.user = data.user
   // console.log(data.user.id)
 }
@@ -43,6 +45,9 @@ const signOutSuccess = function (data) {
   $('#sign-out').addClass('hidden')
   $('#sign-up').removeClass('hidden')
   $('#sign-in').removeClass('hidden')
+  $('#new-game').addClass('hidden')
+  $('#games-played').addClass('hidden')
+  store.user = null
 }
 
 const signOutFailure = function () {

@@ -19,11 +19,20 @@ const runGame = function () {
 
   const placeMove = function () {
     $('.spaces').on('click', function (event) {
-      $(event.target).append(`<h1>${currentPlayer}</h1>`)
+      if ($(event.target).text() === '') {
+        $(event.target).append(`<h1>${currentPlayer}</h1>`)
+        console.log($(event.target).text())
+        const currentVal = $(event.target).data().value
+        gameBoard[currentVal] = currentPlayer
+      } else {
+        $('#message').text('Invalid move. Try again')
+        $('#message').css('background-color', 'red')
+        // $(event.target).off('click')
+        console.log('error')
+      }
 
       // Sets X or O to position in array
-      const currentVal = $(event.target).data().value
-      gameBoard[currentVal] = currentPlayer
+
 
       // turn incrementer
       turn += 1
@@ -38,7 +47,7 @@ const runGame = function () {
         store.player = currentPlayer
       }
 
-      $(event.target).off('click')
+      // $(event.target).off('click')
 
       // console.log(turn)
       // console.log(gameBoard)
