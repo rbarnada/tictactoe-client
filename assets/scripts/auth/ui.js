@@ -13,6 +13,10 @@ const signUpFailure = function () {
 const signInSuccess = function (data) {
   $('#message').text('Successfully signed in')
   $('#message').css('background-color', 'green')
+  $('#change-password').removeClass('hidden')
+  $('#sign-out').removeClass('hidden')
+  $('#sign-up').addClass('hidden')
+  $('#sign-in').addClass('hidden')
   store.user = data.user
   // console.log(data.user.id)
 }
@@ -35,6 +39,10 @@ const changePasswordFailure = function () {
 const signOutSuccess = function (data) {
   $('#message').text('Successfully signed out')
   $('#message').css('background-color', 'green')
+  $('#change-password').addClass('hidden')
+  $('#sign-out').addClass('hidden')
+  $('#sign-up').removeClass('hidden')
+  $('#sign-in').removeClass('hidden')
 }
 
 const signOutFailure = function () {

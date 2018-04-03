@@ -1,18 +1,18 @@
 const api = require('./api')
-const store = require('../../store')
-const gameLogic = require('../gameLogic')
+// const store = require('../../store')
+// const gameLogic = require('../gameLogic')
+const ui = require('./ui')
 
 const createNewGame = function (event) {
   event.preventDefault()
   api.createGame()
-    .then(function (data) {
-      store.game = data.game
-      console.log(store.game.cells)
-      console.log(gameLogic)
-      gameLogic.runGame()
-    })
-    .catch()
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure)
 }
+
+// const onUpdateGame = function (event) {
+//   api.updateGame()
+// }
 
 const addHandlers = function () {
   $('#new-game').on('submit', createNewGame)

@@ -25,10 +25,6 @@ const onSignIn = function (event) {
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
   $('#sign-in')[0].reset()
-  $('#change-password').removeClass('hidden')
-  $('#sign-out').removeClass('hidden')
-  $('#sign-up').addClass('hidden')
-  $('#sign-in').addClass('hidden')
 }
 
 const onChangePassword = function (event) {
@@ -50,10 +46,6 @@ const onSignOut = function (event) {
   api.signOut(data)
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
-  $('#change-password').addClass('hidden')
-  $('#sign-out').addClass('hidden')
-  $('#sign-up').removeClass('hidden')
-  $('#sign-in').removeClass('hidden')
 }
 
 const addHandlers = function () {
