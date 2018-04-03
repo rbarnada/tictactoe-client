@@ -24,6 +24,8 @@ const runGame = function () {
         // console.log($(event.target).text())
         const currentVal = $(event.target).data().value
         gameBoard[currentVal] = currentPlayer
+        // turn incrementer
+        turn += 1
       } else {
         $('#message').text('Invalid move. Try again')
         $('#message').css('background-color', 'red')
@@ -34,9 +36,6 @@ const runGame = function () {
 
       // Sets X or O to position in array
 
-
-      // turn incrementer
-      turn += 1
       // console.log(turn)
 
       // determine player
