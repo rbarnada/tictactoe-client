@@ -14,7 +14,17 @@ const createGameFailure = function () {
   console.log('failed to create game')
 }
 
+const showGamesSuccess = function (data) {
+  $('#user-message').text(`Total games played: ${data.games.length}`)
+}
+
+const showGamesFailure = function () {
+  $('#user-message').text('Could not retrieve games played')
+}
+
 module.exports = {
   createGameSuccess,
-  createGameFailure
+  createGameFailure,
+  showGamesSuccess,
+  showGamesFailure
 }

@@ -10,12 +10,16 @@ const createNewGame = function (event) {
     .catch(ui.createGameFailure)
 }
 
-// const onUpdateGame = function (event) {
-//   api.updateGame()
-// }
+const showGamesPlayed = function () {
+  event.preventDefault()
+  api.getGames()
+    .then(ui.showGamesSuccess)
+    .catch(ui.showGamesFailure)
+}
 
 const addHandlers = function () {
   $('#new-game').on('submit', createNewGame)
+  $('#games-played').on('submit', showGamesPlayed)
 }
 
 module.exports = {
