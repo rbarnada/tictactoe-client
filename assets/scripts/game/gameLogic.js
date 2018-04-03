@@ -89,6 +89,7 @@ const runGame = function () {
         $('#new-game').removeClass('hidden')
       } else if (gameBoard[0] !== '' && gameBoard[1] !== '' && gameBoard[2] !== '' && gameBoard[3] !== '' && gameBoard[4] !== '' && gameBoard[5] !== '' && gameBoard[6] !== '' && gameBoard[7] !== '' && gameBoard[8] !== '') {
         $('#user-message').text("It's a tie")
+        $('.spaces').off('click')
         // gameOver = true
         store.gameState = true
         $('#new-game').removeClass('hidden')

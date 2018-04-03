@@ -9,6 +9,7 @@ const createGameSuccess = function (data) {
   $('#user-message').text('')
   $('.spaces').html('')
   $('#new-game').addClass('hidden')
+  $('.game-board').removeClass('hidden')
 }
 
 const createGameFailure = function () {
