@@ -67,7 +67,7 @@ const runGame = function () {
         // gameOver = true
         // console.log(gameOver)
         // console.log('Player 1 wins')
-        $('#user-message').text('Player 1 wins')
+        $('#user-message').text('X wins')
         $('.spaces').off('click')
         store.gameState = true
         $('#new-game').removeClass('hidden')
@@ -81,7 +81,7 @@ const runGame = function () {
         (gameBoard[1] === 'O' && gameBoard[4] === 'O' && gameBoard[7] === 'O') ||
         (gameBoard[2] === 'O' && gameBoard[4] === 'O' && gameBoard[6] === 'O')) {
         // console.log('Player 2 wins')
-        $('#user-message').text('Player 2 wins')
+        $('#user-message').text('O wins')
         $('.spaces').off('click')
         // gameOver = true
         store.gameState = true
