@@ -3,15 +3,16 @@ const gameLogic = require('../gameLogic')
 
 const createGameSuccess = function (data) {
   store.game = data.game
-  console.log(store.game.cells)
-  console.log(store.game)
+  // console.log(store.game.cells)
+  // console.log(store.game)
   gameLogic.runGame()
   $('#user-message').text('')
   $('.spaces').html('')
 }
 
 const createGameFailure = function () {
-  console.log('failed to create game')
+  // console.log('failed to create game')
+  $('#user-message').text('There was an error creating a new game')
 }
 
 const showGamesSuccess = function (data) {

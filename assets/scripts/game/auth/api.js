@@ -2,7 +2,7 @@ const config = require('../../config')
 const store = require('../../store')
 
 const createGame = function () {
-  console.log('game created')
+  // console.log('game created')
   return $.ajax({
     url: config.apiUrl + `/games`,
     method: 'POST',
@@ -37,7 +37,7 @@ const updateGame = function (event) {
 }
 
 const getGames = function () {
-  console.log('api working')
+  // console.log('api working')
   return $.ajax({
     url: config.apiUrl + `/games`,
     method: 'GET',

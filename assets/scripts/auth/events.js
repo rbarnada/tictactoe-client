@@ -17,7 +17,7 @@ const onSignUp = function (event) {
 // Sign in event handler
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('sign in working')
+  // console.log('sign in working')
   const data = getFormFields(event.target)
 
   // // console.log(data)

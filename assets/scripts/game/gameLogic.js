@@ -21,14 +21,14 @@ const runGame = function () {
     $('.spaces').on('click', function (event) {
       if ($(event.target).text() === '') {
         $(event.target).append(`<h1>${currentPlayer}</h1>`)
-        console.log($(event.target).text())
+        // console.log($(event.target).text())
         const currentVal = $(event.target).data().value
         gameBoard[currentVal] = currentPlayer
       } else {
         $('#message').text('Invalid move. Try again')
         $('#message').css('background-color', 'red')
         // $(event.target).off('click')
-        console.log('error')
+        // console.log('error')
       }
 
       // Sets X or O to position in array
@@ -66,11 +66,11 @@ const runGame = function () {
         (gameBoard[2] === 'X' && gameBoard[4] === 'X' && gameBoard[6] === 'X')) {
         // gameOver = true
         // console.log(gameOver)
-        console.log('Player 1 wins')
+        // console.log('Player 1 wins')
         $('#user-message').text('Player 1 wins')
         $('.spaces').off('click')
         store.gameState = true
-        console.log(store.gameState)
+        // console.log(store.gameState)
       } else if ((gameBoard[0] === 'O' && gameBoard[1] === 'O' && gameBoard[2] === 'O') ||
         (gameBoard[0] === 'O' && gameBoard[3] === 'O' && gameBoard[6] === 'O') ||
         (gameBoard[0] === 'O' && gameBoard[4] === 'O' && gameBoard[8] === 'O') ||
@@ -79,7 +79,7 @@ const runGame = function () {
         (gameBoard[3] === 'O' && gameBoard[4] === 'O' && gameBoard[5] === 'O') ||
         (gameBoard[1] === 'O' && gameBoard[4] === 'O' && gameBoard[7] === 'O') ||
         (gameBoard[2] === 'O' && gameBoard[4] === 'O' && gameBoard[6] === 'O')) {
-        console.log('Player 2 wins')
+        // console.log('Player 2 wins')
         $('#user-message').text('Player 2 wins')
         $('.spaces').off('click')
         // gameOver = true
@@ -91,7 +91,7 @@ const runGame = function () {
       }
       // Update game api function
       api.updateGame(event)
-      console.log(store.game.cells)
+      // console.log(store.game.cells)
     })
   }
 
