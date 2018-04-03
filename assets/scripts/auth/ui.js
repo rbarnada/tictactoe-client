@@ -55,6 +55,7 @@ const signOutSuccess = function (data) {
   $('#new-game').addClass('hidden')
   $('#games-played').addClass('hidden')
   $('.game-board').addClass('hidden')
+  $('#user-message').text('')
   store.user = null
 }
 
