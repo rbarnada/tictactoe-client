@@ -62,9 +62,9 @@ const signOutSuccess = function (data) {
 
   store.user = null
   // store.game = null
-  store.game.cells = null
-  store.player = null
-  store.gameState = false
+  // store.game.cells = null
+  // store.player = null
+  // store.gameState = false
   $('.spaces').off('click')
 }
 
