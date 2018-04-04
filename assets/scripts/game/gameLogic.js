@@ -9,13 +9,14 @@ const runGame = function () {
   let currentPlayer = playerOne
   store.player = currentPlayer
   const gameBoard = store.game.cells
+  const gameTest = store.game
+  console.log(gameTest)
   // let gameOver = false
   store.gameState = false
-  // console.log(gameBoard)
-  // ['', '', '', '', '', '', '', '', '']
+  console.log(gameBoard)
   // turn variable. odd numbers = p1, even p2.
   let turn = 1
-  // let gameOver = false
+  console.log(turn)
 
   const placeMove = function () {
     $('.spaces').on('click', function (event) {
@@ -23,9 +24,10 @@ const runGame = function () {
         $(event.target).append(`<h1>${currentPlayer}</h1>`)
         // console.log($(event.target).text())
         const currentVal = $(event.target).data().value
-        gameBoard[currentVal] = currentPlayer
+        store.game.cells[currentVal] = currentPlayer
         // turn incrementer
-        turn += 1
+        turn++
+        console.log(turn)
       } else {
         $('#message').text('Invalid move. Try again')
         $('#message').css('background-color', 'red')
@@ -35,8 +37,6 @@ const runGame = function () {
       }
 
       // Sets X or O to position in array
-
-      // console.log(turn)
 
       // determine player
       if (turn % 2 === 0) {
@@ -95,12 +95,18 @@ const runGame = function () {
       }
       // Update game api function
       api.updateGame(event)
-      // console.log(store.game.cells)
+      console.log(store.game.cells)
     })
   }
+  placeMove()
+}
 
-  const newGame = function () {
-    placeMove()
+//   const newGame = function () {
+//     placeMove()
+//   }
+//   newGame()
+// }
+
     // $('.spaces').on('click', function (event) {
     //   $(event.target).append(`<h1>${currentPlayer}</h1>`)
     //   // Sets X or O to position in array
@@ -151,8 +157,7 @@ const runGame = function () {
     //     // $('#restart').removeClass('hidden')
     //   }
     // })
-  }
-  newGame()
+
 
   // const restart = function () {
   //   $('#restart').on('submit', function (event) {
@@ -175,7 +180,7 @@ const runGame = function () {
   // }
   //
   // restart()
-}
+
 
 module.exports = {
   runGame

@@ -1,4 +1,6 @@
 const store = require('../store')
+// const gameLogic = require('../game/gameLogic')
+// const api = require('../game/auth/api')
 
 const signUpSuccess = function (data) {
   $('#message').text('Successfully signed up')
@@ -56,7 +58,14 @@ const signOutSuccess = function (data) {
   $('#games-played').addClass('hidden')
   $('.game-board').addClass('hidden')
   $('#user-message').text('')
+  $('.spaces').text('')
+
   store.user = null
+  // store.game = null
+  store.game.cells = null
+  store.player = null
+  store.gameState = false
+  $('.spaces').off('click')
 }
 
 const signOutFailure = function () {
