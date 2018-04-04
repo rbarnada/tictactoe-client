@@ -2,7 +2,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 // const gameApi = require('../game/auth/api')
-const store = require('../store')
+// const store = require('../store')
 
 // Sign up event handler
 const onSignUp = function (event) {
