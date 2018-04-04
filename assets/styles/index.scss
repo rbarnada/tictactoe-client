@@ -1,32 +1,74 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+$black: #000;
+$body-color: #b4cdde;
+$nav-color: #3e5f75;
+
+body {
+  background-color: $body-color;
+  font-family: 'Righteous', sans-serif;
+}
+
+.nav-color {
+  background-color: $nav-color;
+  border: 1px solid $black;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 45px;
+}
+
+.message-style {
+  border-radius: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.winner-message-style {
+  font-size: 40px;
+  text-align: center;
+}
 
 .hidden {
   display: none;
 }
 
+.error-message {
+  border-radius: 3px;
+  text-align: left;
+}
+
+.adjustment {
+  margin-top: 20px;
+}
+
 .center {
-  border: 1px solid black;
+  border: 3px solid $black;
 }
 
 .top {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-left: 3px solid $black;
+  border-right: 3px solid $black;
 }
 
 .bottom {
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+  border-left: 3px solid $black;
+  border-right: 3px solid $black;
 }
 
 .left {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid $black;
+  border-top: 3px solid $black;
 }
 
 .right {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid $black;
+  border-top: 3px solid $black;
 }
 
 .sqr {
@@ -35,10 +77,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
   h1 {
     left: 50%;
+    margin: 0;
     position: absolute;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
-    margin: 0;
   }
 
 }
