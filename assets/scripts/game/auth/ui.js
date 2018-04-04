@@ -18,11 +18,12 @@ const createGameFailure = function () {
 }
 
 const showGamesSuccess = function (data) {
-  $('#user-message').text(`Total games played: ${data.games.length}`)
+  $('#total-message').text(`Total games played: ${data.games.length}`)
+  setTimeout(() => $('#total-message').text(''), 5000)
 }
 
 const showGamesFailure = function () {
-  $('#user-message').text('Could not retrieve games played')
+  $('#total-message').text('Could not retrieve games played')
 }
 
 module.exports = {

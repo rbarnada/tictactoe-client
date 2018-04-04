@@ -1,67 +1,162 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Tic-Tac-Toe</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Tic-Tac-Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <p id='message'></p>
-      <h1>Tic-Tac-Toe</h1>
-      <form id="sign-up">
-        <fieldset>
-          <legend>Sign Up!</legend>
-            <input name="credentials[email]" type="text" placeholder="email">
-            <input name="credentials[password]" type="password" placeholder="password">
-            <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-          <input type="submit" value="Sign Up!">
-        </fieldset>
-      </form>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-      <form id="sign-in">
-        <fieldset>
-          <legend>Sign In!</legend>
-            <input name="credentials[email]" type="text" placeholder="email">
-            <input name="credentials[password]" type="password" placeholder="password">
-          <input type="submit" value="Sign In!">
-        </fieldset>
-      </form>
+<body>
+  <div class="container">
+    <div class="row">
+      <header>
+        <div class="col-xs-12">
+          <!-- <h1>Tic-Tac-Toe</h1> -->
+          <nav class="nav-color navbar navbar-default navbar-top">
+            <div class="container row">
+              <div class="col-xs-9">
+                <h2>Tic-Tac-Toe</h2>
+              </div>
+              <div class="col-xs-3"></div>
+              <ul class="nav nav-pills">
+                <li id="sign-up-modal" class='adjustment'>
+                  <div>
+                    <!-- sign up button -->
+                    <div class="nav navbar-nav nabvar-right">
+                      <!-- Button trigger modal -->
+                      <input type="button" class="btn btn-default" data-toggle="modal" data-target="#SignUp" value="Sign Up">
 
-      <form id="change-password" class="hidden">
-        <fieldset>
-          <legend>Change Password!</legend>
-            <input name="passwords[old]" type="password" placeholder="old password">
-            <input name="passwords[new]" type="password" placeholder="new password">
-          <input type="submit" value="Change Password!">
-        </fieldset>
-      </form>
-      <form id="sign-out" class="hidden">
-        <fieldset>
-          <legend>Sign Out!</legend>
-            <input type="submit" value="Sign Out!">
-        </fieldset>
-      </form>
-    </body>
+                      <!-- Modal -->
+                      <div class="modal fade" id="SignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+                            </div>
+                            <div class="modal-body">
+                              <form id="sign-up">
+                                <input type="text" name="credentials[email]" placeholder="Email">
+                                <input type="password" name="credentials[password]" placeholder="Password">
+                                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                                <input type="submit" class="btn btn-default" value="Sign Up">
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <p class='error-message' id='up-fail-message'></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <li role="presentation"><a href="#">Sign up</a></li> -->
+                  </div>
+                </li>
 
-      <!-- <h1>Tic-Tac-Toe</h1> -->
-      <form id="new-game" class="hidden">
-          <fieldset>
-            <legend>Start New Game</legend>
-            <input type="submit" value="New Game">
-          </fieldset>
-      </form>
-      <p id="messages"></p>
-      <div class="game-board hidden">
-        <div class="row">
-          <div class="col-xs-6">
-            <div class="col-xs-12">
+                <!-- sign in button -->
+                <li id='sign-in-modal' class='adjustment'>
+                  <div>
+                    <div class="nav navbar-nav nabvar-right">
+                      <!-- Button trigger modal -->
+                      <input type="button" class="btn btn-default" data-toggle="modal" data-target="#SignIn" value="Sign In">
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="SignIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+                            </div>
+                            <div class="modal-body">
+
+                              <form id="sign-in">
+                                <input name="credentials[email]" class="form-control-md" type="text" placeholder="email">
+                                <input name="credentials[password]" type="password" placeholder="password">
+                                <input type="submit" class="btn btn-default" value="Sign In">
+                              </form>
+
+                            </div>
+                            <div class="modal-footer">
+                              <p class='error-message' id='in-fail-message'></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- change pass -->
+                <li id="pass-modal" class="hidden adjustment">
+                  <div>
+                    <div class="nav navbar-nav nabvar-right">
+                      <!-- Button trigger modal -->
+                      <input type="button" class="btn btn-default" data-toggle="modal" data-target="#ChangePass" value="Change Pass">
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="ChangePass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+                              <div class="modal-body">
+
+                                <form id="change-password">
+                                  <input name="passwords[old]" type="password" placeholder="old password">
+                                  <input name="passwords[new]" type="password" placeholder="new password">
+                                  <input type="submit" value="Change Password!">
+                                </form>
+
+                              </div>
+                              <div class="modal-footer">
+                                <p class="error-message" id='pass-fail-message'></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <form id="sign-out" class="hidden adjustment">
+                    <input type="submit" class="btn btn-default" value="Sign Out!">
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+      </header>
+
+    </div>
+    <div class="row">
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4">
+        <p class='message-style' id='message'></p>
+      </div>
+      <div class="col-xs-4"></div>
+    </div>
+
+    <p class='winner-message-style' id='user-message'></p>
+    <p id="messages"></p>
+
+
+    <div class="row">
+      <div class="col-xs-3"></div>
+      <div class="col-xs-6">
+        <div class="game-board hidden">
+          <div class="col-xs-12">
             <div class="col-xs-4 spaces sqr" data-value="0"></div>
             <div class="col-xs-4 spaces sqr top" data-value="1"></div>
             <div class="col-xs-4 spaces sqr" data-value="2"></div>
@@ -78,13 +173,28 @@
           </div>
         </div>
       </div>
+      <div class="col-xs-3"></div>
     </div>
-    <p id='user-message'></p>
+
+    <p class='message-style' id='total-message'></p>
+
+    <div class="row">
+      <div class='col-xs-3'></div>
+      <div class='col-xs-3'>
+        <form id="new-game" class="hidden adjustment">
+          <input type="submit" class="btn btn-default" value="New Game">
+        </form>
+      </div>
+      <div class='col-xs-3'>
+        <form id="games-played" class="hidden adjustment">
+          <input type="submit" class="btn btn-default" value="Total Games Played">
+        </form>
+      </div>
+      <div class="col-xs-3"></div>
+    </div>
+  </div>
 
 
-    <form id="games-played" class="hidden">
-          <input type="submit" value="Total Games Played">
-    </form>
-  </body>
+</body>
 
 </html>

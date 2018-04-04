@@ -28,7 +28,7 @@ const runGame = function () {
         // console.log(turn)
       } else {
         $('#message').text('Invalid move. Try again')
-        $('#message').css('background-color', 'red')
+        $('#message').css('background-color', 'pink')
         setTimeout(() => $('#message').text(''), 2000)
         // console.log('error')
       }
