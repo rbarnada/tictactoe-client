@@ -34,3 +34,8 @@ Styling has been a constant issues while making the project. Having just been in
 In the future I would like to work on playing against an AI opponent. When you do not have a friend around to play the game with, the game becomes relatively useless as playing against yourself is pointless. Having an AI opponent would make the games more engaging for single players and offer more value. I would probably try to implement this using some method similar to the AI using math.random to randomly select a position in the array and put a move in there.
 
 Additionally, the functionality for multiplayer on different devices is something I would like to explore, but that is more of a stretch goal.
+
+---
+
+### Wireframe and User Stories:
+https://i.imgur.com/Wd9CIXM.jpg
