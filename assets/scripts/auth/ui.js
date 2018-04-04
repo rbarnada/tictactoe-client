@@ -8,7 +8,6 @@ const signUpSuccess = function (data) {
 
 const signUpFailure = function () {
   $('#message').text('Something went wrong with signup')
-  $('#message').css('background-color', 'red')
   setTimeout(() => $('#message').text(''), 3000)
 }
 

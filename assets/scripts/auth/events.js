@@ -27,6 +27,9 @@ const onSignIn = function (event) {
   $('#sign-in')[0].reset()
 }
 
+// $('#sign-in').click()
+//    $('#addListItem').modal('hide')
+
 const onChangePassword = function (event) {
   event.preventDefault()
   // console.log('change password is working')
